@@ -1,0 +1,991 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: #0f0f12;
+    color: #f4f1ea;
+    font-family: "Lora", serif;
+    line-height: 1.8;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 8%;
+    border-bottom: 1px solid #333333;
+}
+
+header h1 {
+    font-size: 24px;
+    font-weight: normal;
+}
+
+nav {
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    color: #eeeeee;
+    text-decoration: none;
+}
+
+nav a:hover {
+    opacity: 0.6;
+}
+
+.hero {
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.small-text {
+    font-size: 14px;
+    opacity: 0.6;
+    margin-bottom: 30px;
+}
+
+.hero h2 {
+    max-width: 700px;
+    font-size: 50px;
+    font-weight: normal;
+    line-height: 1.2;
+}
+
+.hero p {
+    max-width: 500px;
+    margin-top: 20px;
+}
+
+.button {
+    display: inline-block;
+    margin-top: 40px;
+    padding: 12px 25px;
+    border: 1px solid #eeeeee;
+    color: #eeeeee;
+    text-decoration: none;
+}
+
+.button:hover {
+    background: #eeeeee;
+    color: #111111;
+}
+
+section {
+    padding: 120px 7%;
+}
+
+section h2 {
+    font-size: 35px;
+    font-weight: normal;
+    margin-bottom: 40px;
+}
+
+article {
+    max-width: 600px;
+    border-top: 1px solid #333333;
+    padding-top: 30px;
+}
+
+article h3 {
+    font-size: 25px;
+    font-weight: normal;
+}
+
+article p {
+    margin: 20px 0;
+    opacity: 0.7;
+}
+
+article a {
+    color: #eeeeee;
+}
+
+footer {
+    padding: 50px 8%;
+    border-top: 1px solid #333333;
+    text-align: center;
+    opacity: 0.5;
+}
+
+
+.writing-page {
+    max-width: 650px;
+    margin: 0 auto;
+    padding: 120px 20px;
+}
+
+.writing-page h2 {
+    font-size: 55px;
+    line-height: 1.2;
+    margin-bottom: 15px;
+}
+
+.writing-date {
+    opacity: 0.4;
+    font-size: 14px;
+    margin-bottom: 80px;
+}
+
+.writing-content {
+    font-size: 19px;
+    line-height: 2.2;
+}
+
+.writing-content p {
+    margin-bottom: 35px;
+}
+
+.signature {
+    margin-top: 100px;
+    padding-top: 40px;
+    border-top: 1px solid #333333;
+    font-style: italic;
+    opacity: 0.7;
+}
+
+.back-button {
+    display: inline-block;
+    margin-top: 60px;
+    color: #eeeeee;
+    text-decoration: none;
+    opacity: 0.7;
+}
+
+.back-button:hover {
+    opacity: 1;
+}
+
+
+.writings-header {
+    max-width: 750px;
+    margin: 0 auto;
+    padding: 140px 25px 80px;
+}
+
+.writings-header h2 {
+    font-size: 55px;
+    font-weight: normal;
+    line-height: 1.2;
+    margin-bottom: 30px;
+}
+
+.writings-header > p:last-child {
+    max-width: 600px;
+    font-size: 18px;
+    opacity: 0.7;
+}
+
+
+.writing-list {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px 25px 140px;
+}
+
+
+.writing-card {
+    border-top: 1px solid #333333;
+    padding: 50px 0;
+    transition: transform 0.3s ease;
+}
+
+
+.writing-card:hover {
+    transform: translateX(10px);
+}
+
+
+.writing-card h3 {
+    font-size: 32px;
+    font-weight: normal;
+    margin: 15px 0;
+}
+
+
+.writing-card p:not(.small-text) {
+    max-width: 600px;
+    opacity: 0.7;
+    margin-bottom: 25px;
+}
+
+
+.writing-card a {
+    color: #eeeeee;
+    text-decoration: none;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+
+.writing-card a:hover {
+    opacity: 1;
+}
+
+
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+/* Tablets and smaller screens */
+@media (max-width: 768px) {
+
+    header {
+        padding: 25px 6%;
+    }
+
+    header h1 {
+        font-size: 20px;
+    }
+
+    nav {
+        gap: 15px;
+    }
+
+    nav a {
+        font-size: 14px;
+    }
+
+
+    /* Homepage */
+
+    .hero {
+        min-height: 80vh;
+        padding: 40px 25px;
+    }
+
+    .hero h2 {
+        font-size: 40px;
+    }
+
+
+    section {
+        padding: 120px 7%;
+    }
+
+    section h2 {
+        font-size: 32px;
+    }
+
+
+    /* Writings page */
+
+    .writings-header {
+        padding: 100px 25px 60px;
+    }
+
+    .writings-header h2 {
+        font-size: 42px;
+    }
+
+    .writing-list {
+        padding: 20px 25px 100px;
+    }
+
+
+    /* Individual writing page */
+
+    .writing-page {
+        padding: 100px 25px;
+    }
+
+    .writing-page h2 {
+        font-size: 45px;
+    }
+
+    .writing-date {
+        margin-bottom: 60px;
+    }
+
+    .writing-content {
+        font-size: 18px;
+        line-height: 1.9;
+    }
+
+
+
+/* ========================================
+   PHONES
+   ======================================== */
+
+@media (max-width: 480px) {
+
+    header {
+        flex-direction: column;
+        gap: 20px;
+        padding: 25px 20px;
+    }
+
+    header h1 {
+        font-size: 21px;
+    }
+
+    nav {
+        gap: 20px;
+    }
+
+    nav a {
+        font-size: 13px;
+    }
+
+
+    /* Homepage */
+
+    .hero {
+        min-height: 75vh;
+        padding: 50px 20px;
+    }
+
+    .hero h2 {
+        font-size: 34px;
+        line-height: 1.25;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .button {
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+
+
+    /* General sections */
+
+    section {
+        padding: 70px 20px;
+    }
+
+    section h2 {
+        font-size: 30px;
+    }
+
+
+    /* Writings page */
+
+    .writings-header {
+        padding: 80px 20px 50px;
+    }
+
+    .writings-header h2 {
+        font-size: 36px;
+    }
+
+    .writings-header > p:last-child {
+        font-size: 16px;
+    }
+
+    .writing-list {
+        padding: 20px 20px 80px;
+    }
+
+    .writing-card {
+        padding: 40px 0;
+    }
+
+    .writing-card h3 {
+        font-size: 27px;
+    }
+
+
+    /* Individual writing page */
+
+    .writing-page {
+        padding: 80px 20px;
+    }
+
+    .writing-page h2 {
+        font-size: 38px;
+        letter-spacing: -0.5px;
+    }
+
+    .writing-date {
+        margin-bottom: 50px;
+    }
+
+    .writing-content {
+        font-size: 17px;
+        line-height: 1.9;
+    }
+
+    .writing-content p {
+        margin-bottom: 30px;
+    }
+
+    .writing-content p:first-child {
+        font-size: 20px;
+    }
+
+    .signature {
+        margin-top: 80px;
+        padding-top: 35px;
+    }
+
+
+    /* Footer */
+
+    footer {
+        padding: 40px 20px;
+    }
+
+}
+
+
+/* ========================================
+   SUBTLE ANIMATIONS
+   ======================================== */
+
+/* The whole page gently appears */
+body {
+    animation: pageAppear 1.2s ease forwards;
+}
+
+@keyframes pageAppear {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+
+}
+
+
+/* Hero content slowly rises into view */
+
+.hero h2,
+.hero p,
+.hero .button {
+    animation: gentleRise 1s ease forwards;
+    opacity: 0;
+}
+
+
+.hero h2 {
+    animation-delay: 0.3s;
+}
+
+
+.hero p {
+    animation-delay: 0.6s;
+}
+
+
+.hero .button {
+    animation-delay: 0.9s;
+}
+
+
+@keyframes gentleRise {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* Writing cards appear softly */
+
+.writing-card {
+    animation: writingAppear 1s ease forwards;
+}
+
+
+@keyframes writingAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* Links become brighter when touched */
+
+a {
+    transition:
+        opacity 0.3s ease,
+        color 0.3s ease;
+}
+
+
+/* Buttons gently change */
+
+.button {
+    transition:
+        background 0.4s ease,
+        color 0.4s ease,
+        transform 0.3s ease;
+}
+
+
+.button:hover {
+    transform: translateY(-2px);
+}
+
+
+/* Writing cards gently move */
+
+.writing-card {
+    transition:
+        transform 0.4s ease,
+        opacity 0.4s ease;
+}
+
+
+.writing-card:hover {
+    transform: translateX(8px);
+}
+
+
+.signature {
+    text-align: center;
+}
+
+.signature-mark {
+    font-size: 20px;
+    margin-bottom: 25px;
+    opacity: 0.5;
+}
+
+
+.featured{
+    text-align:center;
+    padding:120px 20px;
+}
+
+.featured h2{
+    font-size:48px;
+    margin:20px 0;
+    font-weight:normal;
+}
+
+.featured p{
+    max-width:600px;
+    margin:auto;
+}
+
+
+.reading-time{
+    opacity:.5;
+    margin-bottom:70px;
+    letter-spacing:1px;
+}
+
+blockquote{
+
+    font-size:30px;
+    line-height:1.5;
+    text-align:center;
+
+    margin:80px auto;
+
+    max-width:600px;
+
+    font-style:italic;
+
+    opacity:.8;
+
+}
+
+
+body{
+    font-family:"Lora",serif;
+}
+
+h1,h2,h3{
+    font-family:"Cormorant Garamond",serif;
+}
+
+
+
+:root{
+
+    --bg:#0f0f12;
+
+    --surface:#18181d;
+
+    --text:#f4f1ea;
+
+    --muted:#9d9d9d;
+
+    --line:#2b2b31;
+
+    --accent:#d8c8a8;
+
+}
+
+/* Navigation */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 7%;
+    border-bottom: 1px solid #2c2c33;
+}
+
+header h1 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1.7rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    color: #a7a7a7;
+    text-decoration: none;
+    font-family: "Lora", serif;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #d8c8a8;
+}
+
+h2,
+h3 {
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 500;
+}
+
+h2 {
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    line-height: 1.15;
+}
+
+h3 {
+    font-size: 2rem;
+}
+
+h2,
+h3 {
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 500;
+}
+
+h2 {
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    line-height: 1.15;
+}
+
+h3 {
+    font-size: 2rem;
+}
+
+
+.button,
+.text-link {
+    display: inline-block;
+    color: #d8c8a8;
+    text-decoration: none;
+    margin-top: 20px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #d8c8a8;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.button:hover,
+.text-link:hover {
+    opacity: 0.7;
+    transform: translateX(4px);
+}
+
+/* Gentle entrance */
+
+.featured {
+    animation: appear 1.4s ease-out;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Writing Library */
+
+.writings-header {
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+.writing-list {
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.writing-card {
+    padding: 50px 0;
+    border-top: 1px solid #2c2c33;
+    transition: transform 0.3s ease;
+}
+
+.writing-card h3 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.writing-card p:not(.small-text) {
+    max-width: 600px;
+    color: #a7a7a7;
+}
+
+.writing-card a {
+    display: inline-block;
+    margin-top: 15px;
+    color: #d8c8a8;
+    text-decoration: none;
+    border-bottom: 1px solid #d8c8a8;
+    padding-bottom: 4px;
+    transition: opacity 0.3s ease;
+}
+
+.writing-card a:hover {
+    opacity: 0.6;
+}
+
+
+/* Individual Writing Page */
+
+.writing-page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding-top: 100px;
+    padding-bottom: 120px;
+}
+
+.writing-page h2 {
+    max-width: 750px;
+    margin-bottom: 20px;
+}
+
+.writing-meta {
+    display: flex;
+    gap: 25px;
+    color: #777;
+    font-size: 0.8rem;
+    margin-bottom: 70px;
+}
+
+.writing-content {
+    max-width: 680px;
+}
+
+.writing-content p {
+    margin-bottom: 30px;
+    color: #c7c4bd;
+    font-size: 1.05rem;
+}
+
+.writing-content p:first-child {
+    color: #f4f1ea;
+}
+
+.signature {
+    margin-top: 100px;
+    padding-top: 40px;
+    border-top: 1px solid #2c2c33;
+    text-align: center;
+}
+
+.signature-mark {
+    color: #d8c8a8 !important;
+    font-size: 1.5rem !important;
+    margin-bottom: 20px !important;
+}
+
+.signature p:last-child {
+    color: #a7a7a7;
+    font-style: italic;
+}
+
+.back-button {
+    display: inline-block;
+    margin-top: 70px;
+    color: #d8c8a8;
+    text-decoration: none;
+    border-bottom: 1px solid #d8c8a8;
+    padding-bottom: 5px;
+    transition: opacity 0.3s ease;
+}
+
+.back-button:hover {
+    opacity: 0.6;
+}
+
+
+/* Changing Whisper */
+
+#daily-quote {
+    min-height: 30px;
+    margin: 25px 0 10px;
+    color: #a7a7a7;
+    font-family: "Lora", serif;
+    font-style: italic;
+    font-size: 0.95rem;
+    opacity: 0;
+    animation: whisperAppear 2s ease forwards;
+}
+
+@keyframes whisperAppear {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+/* Mobile */
+
+@media (max-width: 700px) {
+
+    header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+        text-align: center;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    nav {
+        gap: 18px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    section {
+        padding: 80px 20px;
+    }
+
+    .hero {
+        min-height: 90vh;
+        padding: 30px 20px;
+    }
+
+    .hero h1 {
+        letter-spacing: 2px;
+    }
+
+    .intro {
+        font-size: 1.15rem;
+    }
+
+    .featured {
+        min-height: auto;
+    }
+
+    .writing-page {
+        padding-top: 60px;
+        padding-bottom: 80px;
+    }
+
+    .writing-meta {
+        flex-wrap: wrap;
+        gap: 10px 20px;
+        margin-bottom: 50px;
+    }
+
+    .writing-content p {
+        font-size: 1rem;
+        margin-bottom: 25px;
+    }
+
+    .writing-card h3 {
+        font-size: 2rem;
+    }
+
+    footer {
+        padding: 30px 20px;
+    }
+
+}
+
+/* Final Polish */
+
+html {
+    scroll-behavior: smooth;
+}
+
+::selection {
+    background: #d8c8a8;
+    color: #0f0f12;
+}
+
+a {
+    transition: color 0.3s ease, opacity 0.3s ease;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+@media (max-width: 700px) {
+
+    h2 {
+        font-size: 2.4rem;
+    }
+
+    .writing-page h2 {
+        font-size: 2.5rem;
+    }
+
+    .writing-content {
+        width: 100%;
+    }
+
+}
