@@ -1005,3 +1005,93 @@ img {
     object-fit: contain;
 }
 
+
+/* ========================================
+   LEAVE A WHISPER
+   ======================================== */
+
+.whisper-box {
+    max-width: 750px;
+    margin: 0 auto;
+    padding: 120px 25px;
+    text-align: center;
+}
+
+.whisper-box h2 {
+    max-width: 650px;
+    margin: 20px auto;
+    font-size: clamp(2.4rem, 5vw, 4rem);
+    font-weight: normal;
+}
+
+.whisper-box > p:not(.small-text) {
+    max-width: 550px;
+    margin: 0 auto 45px;
+    color: #a7a7a7;
+}
+
+.whisper-box form {
+    max-width: 650px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.whisper-box textarea,
+.whisper-box input {
+    width: 100%;
+    background: #18181d;
+    border: 1px solid #2c2c33;
+    color: #f4f1ea;
+    padding: 18px;
+    font-family: "Lora", serif;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.whisper-box textarea {
+    min-height: 170px;
+    resize: vertical;
+}
+
+.whisper-box textarea::placeholder,
+.whisper-box input::placeholder {
+    color: #777;
+}
+
+.whisper-box textarea:focus,
+.whisper-box input:focus {
+    border-color: #d8c8a8;
+}
+
+.whisper-box button {
+    align-self: center;
+    margin-top: 10px;
+    padding: 13px 30px;
+    background: transparent;
+    border: 1px solid #d8c8a8;
+    color: #d8c8a8;
+    font-family: "Lora", serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.whisper-box button:hover {
+    background: #d8c8a8;
+    color: #0f0f12;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 700px) {
+
+    .whisper-box {
+        padding: 80px 20px;
+    }
+
+    .whisper-box h2 {
+        font-size: 2.5rem;
+    }
+
+}
