@@ -990,24 +990,18 @@ img {
 
 }
 
+
     .logo {
     display: flex;
     align-items: center;
+    text-decoration: none;
 }
 
 .logo img {
-    width: 55px;
-    height: 55px;
-    object-fit: contain;
-    display: block;
-}
-
-.logo img {
-    width: 70px !important;
-    height: 70px !important;
     display: block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
+    width: 60px !important;
+    height: 60px !important;
+    max-width: none !important;
     object-fit: contain;
 }
 
