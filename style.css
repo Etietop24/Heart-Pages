@@ -1002,4 +1002,12 @@ img {
     display: block;
 }
 
+.logo img {
+    width: 70px !important;
+    height: 70px !important;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    object-fit: contain;
+}
 
