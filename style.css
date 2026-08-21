@@ -1098,3 +1098,59 @@ img {
 
 
 
+/* ========================================
+   WHISPER WALL
+   ======================================== */
+
+.whisper-wall {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 100px 25px 140px;
+}
+
+.whisper-wall > h2 {
+    text-align: center;
+    margin: 20px auto 70px;
+}
+
+.whisper-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.whisper-card {
+    padding: 35px;
+    border-top: 1px solid #2c2c33;
+    border-bottom: 1px solid #2c2c33;
+}
+
+.whisper-text {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1.5rem;
+    line-height: 1.7;
+    color: #c7c4bd;
+}
+
+.whisper-author {
+    margin-top: 20px;
+    color: #777;
+    font-size: 0.85rem;
+    font-style: italic;
+}
+
+@media (max-width: 700px) {
+
+    .whisper-wall {
+        padding: 80px 20px 100px;
+    }
+
+    .whisper-card {
+        padding: 25px 10px;
+    }
+
+    .whisper-text {
+        font-size: 1.3rem;
+    }
+
+}
