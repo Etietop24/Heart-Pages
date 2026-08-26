@@ -1,3 +1,4 @@
+
 const whispers = [
     "Some feelings arrive without names.",
     "Not everything meant to be felt needs to be spoken.",
@@ -7,14 +8,20 @@ const whispers = [
     "Maybe these words found you for a reason."
 ];
 
+
+// DAILY QUOTE
+
 const whisperElement = document.getElementById("daily-quote");
 
 if (whisperElement) {
+
     const randomWhisper =
         whispers[Math.floor(Math.random() * whispers.length)];
 
     whisperElement.textContent = randomWhisper;
+
 }
+
 
 // ROTATING FEATURED WRITINGS
 
@@ -88,19 +95,36 @@ const featuredWritings = [
 
 let featuredIndex = 0;
 
-const featuredTitle = document.getElementById("featured-title");
-const featuredDescription = document.getElementById("featured-description");
-const featuredLink = document.getElementById("featured-link");
+const featuredTitle =
+    document.getElementById("featured-title");
+
+const featuredDescription =
+    document.getElementById("featured-description");
+
+const featuredLink =
+    document.getElementById("featured-link");
 
 
 function showFeaturedWriting(index) {
 
     const writing = featuredWritings[index];
 
+    if (!featuredTitle ||
+        !featuredDescription ||
+        !featuredLink) {
+        return;
+    }
+
     featuredTitle.textContent = writing.title;
-    featuredDescription.textContent = writing.description;
-    featuredLink.textContent = writing.button;
-    featuredLink.href = writing.link;
+
+    featuredDescription.textContent =
+        writing.description;
+
+    featuredLink.textContent =
+        writing.button;
+
+    featuredLink.href =
+        writing.link;
 
 }
 
@@ -119,4 +143,3 @@ setInterval(() => {
     showFeaturedWriting(featuredIndex);
 
 }, 5000);
-
