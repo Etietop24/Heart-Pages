@@ -16,7 +16,6 @@ if (whisperElement) {
     whisperElement.textContent = randomWhisper;
 }
 
-```javascript
 // ROTATING FEATURED WRITINGS
 
 const featuredWritings = [
@@ -120,4 +119,4 @@ setInterval(() => {
     showFeaturedWriting(featuredIndex);
 
 }, 5000);
-```
+
