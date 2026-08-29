@@ -1231,4 +1231,29 @@ border: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 
+/* RANDOM WHISPER */
 
+.random-whisper {
+    text-align: center;
+    max-width: 700px;
+    margin: 90px auto;
+    padding: 50px 25px;
+}
+
+.random-whisper h2 {
+    margin-bottom: 30px;
+}
+
+.random-whisper-button {
+    font-family: "Lora", serif;
+    font-size: 0.95rem;
+    padding: 12px 24px;
+    background: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.random-whisper-button:hover {
+    transform: translateY(-2px);
+}
