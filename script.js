@@ -143,3 +143,30 @@ setInterval(() => {
     showFeaturedWriting(featuredIndex);
 
 }, 5000);
+
+
+// RANDOM WHISPER
+
+function giveMeAWhisper() {
+
+    const whispers = [
+        "writing-1.html",
+        "writing-2.html",
+        "writing-3.html",
+        "writing-4.html",
+        "writing-5.html",
+        "writing-6.html",
+        "writing-7.html",
+        "writing-8.html",
+        "writing-9.html",
+        "writing-10.html",
+        "writing-11.html",
+        "writing-12.html",
+        "writing-13.html"
+    ];
+
+    const randomWhisper =
+        whispers[Math.floor(Math.random() * whispers.length)];
+
+    window.location.href = randomWhisper;
+}
