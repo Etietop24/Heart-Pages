@@ -1257,3 +1257,60 @@ border: 1px solid rgba(0, 0, 0, 0.15);
 .random-whisper-button:hover {
     transform: translateY(-2px);
 }
+
+
+
+/* ==============================
+   THE UNFINISHED PAGE
+   ============================== */
+
+.unfinished-link {
+    max-width: 800px;
+    margin: 100px auto;
+    padding: 70px 30px;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.unfinished-link h2 {
+    margin: 15px 0 20px;
+}
+
+.unfinished-link p:not(.small-text) {
+    max-width: 600px;
+    margin: 0 auto 30px;
+    line-height: 1.8;
+}
+
+.unfinished-link .button {
+    display: inline-block;
+}
+
+
+/* Unfinished page */
+
+.writing-page .unfinished-entry {
+    margin-top: 80px;
+}
+
+.writing-page .unfinished-entry .writing-content p {
+    margin-bottom: 28px;
+}
+
+.unfinished-page {
+    min-height: 70vh;
+}
+
+.unfinished-page .writing-content {
+    opacity: 0.92;
+}
+
+.unfinished-page .writing-content p {
+    margin-bottom: 32px;
+}
+
+.unfinished-page .signature-mark {
+    font-size: 28px;
+    letter-spacing: 6px;
+}
