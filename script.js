@@ -148,22 +148,28 @@ setInterval(() => {
 // RANDOM WHISPER
 
 function giveMeAWhisper() {
-
     const whispers = [
-        "writing-1.html",
-        "writing-2.html",
-        "writing-3.html",
-        "writing-4.html",
-        "writing-5.html",
-        "writing-6.html",
-        "writing-7.html",
-        "writing-8.html",
-        "writing-9.html",
-        "writing-10.html",
-        "writing-11.html",
-        "writing-12.html",
-        "writing-13.html"
-    ];
+    "writing-1.html",
+    "writing-2.html",
+    "writing-3.html",
+    "writing-4.html",
+    "writing-5.html",
+    "writing-6.html",
+    "writing-7.html",
+    "writing-8.html",
+    "writing-9.html",
+    "writing-10.html",
+    "writing-11.html",
+    "writing-12.html",
+    "writing-13.html",
+    "writing-14.html",
+    "writing-15.html",
+    "writing-16.html",
+    "writing-17.html",
+    "writing-18.html"
+];
+
+   
 
     const randomWhisper =
         whispers[Math.floor(Math.random() * whispers.length)];
@@ -182,62 +188,71 @@ document.addEventListener("DOMContentLoaded", function () {
     const resultText = document.getElementById("searchResults");
 
     const cards = document.querySelectorAll(".writing-card");
-    const collectionButtons = document.querySelectorAll(".collection-button");
+    const collectionButtons =
+        document.querySelectorAll(".collection-button");
 
-    if (!searchInput || !cards.length) return;
+
+    // Stop if the search section isn't on this page
+    if (!searchInput || cards.length === 0) {
+        return;
+    }
 
 
-    /* THEMES FOR EACH WHISPER */
+    /*
+        THEMES FOR EACH WHISPER
+
+        These are the words visitors can search for.
+    */
 
     const whisperTags = {
 
         "writing-1.html":
-            "love letter relationship memories distance emotions",
+            "love letter relationship memories distance emotions feelings",
 
         "writing-2.html":
-            "reflection love relationship pain confusion healing",
+            "reflection love relationship pain confusion healing feelings",
 
         "writing-3.html":
-            "reflection love attraction feelings vulnerability",
+            "reflection love attraction feelings vulnerability relationship",
 
         "writing-4.html":
-            "fragment pain heartbreak memories loss",
+            "fragment pain heartbreak memories loss sadness feelings",
 
         "writing-5.html":
-            "reflection love friendship relationship confusion feelings",
+            "reflection love friendship relationship confusion feelings connection",
 
         "writing-6.html":
-            "declaration love desire identity devotion feelings",
+            "declaration love desire identity devotion feelings relationship",
 
         "writing-7.html":
-            "reflection longing curiosity love memories feelings",
+            "reflection longing curiosity love memories feelings waiting",
 
         "writing-8.html":
-            "letter love regret memories vulnerability waiting",
+            "letter love regret memories vulnerability waiting sadness",
 
         "writing-9.html":
-            "reflection love self-love self-worth healing choosing-yourself",
+            "reflection love self-love self-worth healing choosing yourself",
 
         "writing-10.html":
-            "reflection womanhood self-worth fear courage healing",
+            "reflection womanhood self-worth fear courage healing strength",
 
         "writing-11.html":
-            "reflection healing second-chances past hope change",
+            "reflection healing second chances past hope change growth",
 
         "writing-12.html":
-            "fantasy reflection deception attraction warning mystery",
+            "fantasy reflection deception attraction warning mystery feelings",
 
         "writing-13.html":
-            "reflection journey choices memories life change",
+            "reflection journey choices memories life change growth",
 
         "writing-14.html":
-            "reflection love flaws acceptance feelings memories",
+            "reflection love flaws acceptance feelings memories relationship",
 
         "writing-15.html":
-            "letter love loss longing memories attachment feelings",
+            "letter love loss longing memories attachment feelings missing",
 
         "writing-16.html":
-            "letter love trust relationships vulnerability acceptance feelings",
+            "letter love trust relationship vulnerability acceptance feelings",
 
         "writing-17.html":
             "reflection love confusion vulnerability trust acceptance feelings",
@@ -252,25 +267,30 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function filterWhispers() {
 
-        const searchTerm = searchInput.value
-            .toLowerCase()
-            .trim();
+        const searchTerm =
+            searchInput.value.toLowerCase().trim();
 
         let visibleCount = 0;
 
 
-        cards.forEach(card => {
+        cards.forEach(function (card) {
 
             const link = card.querySelector("a");
 
-            if (!link) return;
+            if (!link) {
+                return;
+            }
+
 
             const href = link.getAttribute("href");
 
-            const tags = whisperTags[href] || "";
+            const tags =
+                whisperTags[href] || "";
+
 
             const cardText =
                 card.textContent.toLowerCase();
+
 
             const searchableText =
                 cardText + " " + tags;
@@ -283,7 +303,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             const matchesCategory =
                 activeFilter === "all" ||
-                tags.includes(activeFilter);
+                tags.split(" ").includes(activeFilter);
 
 
             if (matchesSearch && matchesCategory) {
@@ -318,7 +338,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /* SEARCH */
+    // SEARCH AS YOU TYPE
 
     searchInput.addEventListener(
         "input",
@@ -326,61 +346,87 @@ document.addEventListener("DOMContentLoaded", function () {
     );
 
 
-    /* CLEAR SEARCH */
+    // CLEAR BUTTON
 
-    clearButton.addEventListener(
-        "click",
-        function () {
+    if (clearButton) {
 
-            searchInput.value = "";
+        clearButton.addEventListener(
+            "click",
+            function () {
 
-            activeFilter = "all";
+                searchInput.value = "";
 
-
-            collectionButtons.forEach(button => {
-                button.classList.remove("active");
-            });
+                activeFilter = "all";
 
 
-            document
-                .querySelector('[data-filter="all"]')
-                .classList.add("active");
+                collectionButtons.forEach(
+                    function (button) {
+
+                        button.classList.remove("active");
+
+                    }
+                );
 
 
-            filterWhispers();
+                const allButton =
+                    document.querySelector(
+                        '[data-filter="all"]'
+                    );
 
-            searchInput.focus();
+
+                if (allButton) {
+
+                    allButton.classList.add("active");
+
+                }
+
+
+                filterWhispers();
+
+                searchInput.focus();
+
+            }
+        );
+
+    }
+
+
+    // COLLECTION BUTTONS
+
+    collectionButtons.forEach(
+        function (button) {
+
+            button.addEventListener(
+                "click",
+                function () {
+
+                    collectionButtons.forEach(
+                        function (btn) {
+
+                            btn.classList.remove("active");
+
+                        }
+                    );
+
+
+                    this.classList.add("active");
+
+
+                    activeFilter =
+                        this.dataset.filter;
+
+
+                    filterWhispers();
+
+                }
+            );
 
         }
     );
 
 
-    /* COLLECTION BUTTONS */
+    // INITIAL STATE
 
-    collectionButtons.forEach(button => {
-
-        button.addEventListener(
-            "click",
-            function () {
-
-                collectionButtons.forEach(btn => {
-                    btn.classList.remove("active");
-                });
-
-
-                this.classList.add("active");
-
-
-                activeFilter =
-                    this.dataset.filter;
-
-
-                filterWhispers();
-
-            }
-        );
-
-    });
+    filterWhispers();
 
 });
-
