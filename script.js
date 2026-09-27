@@ -170,3 +170,217 @@ function giveMeAWhisper() {
 
     window.location.href = randomWhisper;
 }
+
+/* =================================
+   WHISPER SEARCH & COLLECTIONS
+================================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const searchInput = document.getElementById("whisperSearch");
+    const clearButton = document.getElementById("clearSearch");
+    const resultText = document.getElementById("searchResults");
+
+    const cards = document.querySelectorAll(".writing-card");
+    const collectionButtons = document.querySelectorAll(".collection-button");
+
+    if (!searchInput || !cards.length) return;
+
+
+    /* THEMES FOR EACH WHISPER */
+
+    const whisperTags = {
+
+        "writing-1.html":
+            "love letter relationship memories distance emotions",
+
+        "writing-2.html":
+            "reflection love relationship pain confusion healing",
+
+        "writing-3.html":
+            "reflection love attraction feelings vulnerability",
+
+        "writing-4.html":
+            "fragment pain heartbreak memories loss",
+
+        "writing-5.html":
+            "reflection love friendship relationship confusion feelings",
+
+        "writing-6.html":
+            "declaration love desire identity devotion feelings",
+
+        "writing-7.html":
+            "reflection longing curiosity love memories feelings",
+
+        "writing-8.html":
+            "letter love regret memories vulnerability waiting",
+
+        "writing-9.html":
+            "reflection love self-love self-worth healing choosing-yourself",
+
+        "writing-10.html":
+            "reflection womanhood self-worth fear courage healing",
+
+        "writing-11.html":
+            "reflection healing second-chances past hope change",
+
+        "writing-12.html":
+            "fantasy reflection deception attraction warning mystery",
+
+        "writing-13.html":
+            "reflection journey choices memories life change",
+
+        "writing-14.html":
+            "reflection love flaws acceptance feelings memories",
+
+        "writing-15.html":
+            "letter love loss longing memories attachment feelings",
+
+        "writing-16.html":
+            "letter love trust relationships vulnerability acceptance feelings",
+
+        "writing-17.html":
+            "reflection love confusion vulnerability trust acceptance feelings",
+
+        "writing-18.html":
+            "fragment competition attraction jealousy confusion uncertainty feelings"
+    };
+
+
+    let activeFilter = "all";
+
+
+    function filterWhispers() {
+
+        const searchTerm = searchInput.value
+            .toLowerCase()
+            .trim();
+
+        let visibleCount = 0;
+
+
+        cards.forEach(card => {
+
+            const link = card.querySelector("a");
+
+            if (!link) return;
+
+            const href = link.getAttribute("href");
+
+            const tags = whisperTags[href] || "";
+
+            const cardText =
+                card.textContent.toLowerCase();
+
+            const searchableText =
+                cardText + " " + tags;
+
+
+            const matchesSearch =
+                searchTerm === "" ||
+                searchableText.includes(searchTerm);
+
+
+            const matchesCategory =
+                activeFilter === "all" ||
+                tags.includes(activeFilter);
+
+
+            if (matchesSearch && matchesCategory) {
+
+                card.classList.remove("search-hidden");
+
+                visibleCount++;
+
+            } else {
+
+                card.classList.add("search-hidden");
+
+            }
+
+        });
+
+
+        if (searchTerm !== "" || activeFilter !== "all") {
+
+            resultText.textContent =
+                visibleCount +
+                (visibleCount === 1
+                    ? " whisper found."
+                    : " whispers found.");
+
+        } else {
+
+            resultText.textContent = "";
+
+        }
+
+    }
+
+
+    /* SEARCH */
+
+    searchInput.addEventListener(
+        "input",
+        filterWhispers
+    );
+
+
+    /* CLEAR SEARCH */
+
+    clearButton.addEventListener(
+        "click",
+        function () {
+
+            searchInput.value = "";
+
+            activeFilter = "all";
+
+
+            collectionButtons.forEach(button => {
+                button.classList.remove("active");
+            });
+
+
+            document
+                .querySelector('[data-filter="all"]')
+                .classList.add("active");
+
+
+            filterWhispers();
+
+            searchInput.focus();
+
+        }
+    );
+
+
+    /* COLLECTION BUTTONS */
+
+    collectionButtons.forEach(button => {
+
+        button.addEventListener(
+            "click",
+            function () {
+
+                collectionButtons.forEach(btn => {
+                    btn.classList.remove("active");
+                });
+
+
+                this.classList.add("active");
+
+
+                activeFilter =
+                    this.dataset.filter;
+
+
+                filterWhispers();
+
+            }
+        );
+
+    });
+
+});
+
