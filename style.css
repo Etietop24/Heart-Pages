@@ -1314,3 +1314,136 @@ border: 1px solid rgba(0, 0, 0, 0.15);
     font-size: 28px;
     letter-spacing: 6px;
 }
+/* ================================
+   WHISPER SEARCH
+================================ */
+
+.whisper-search {
+    max-width: 850px;
+    margin: 70px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.whisper-search h2 {
+    margin-bottom: 10px;
+}
+
+.whisper-search > p:not(.small-text):not(.search-results) {
+    max-width: 600px;
+    margin: 0 auto 30px;
+}
+
+
+/* SEARCH BOX */
+
+.search-box {
+    position: relative;
+    max-width: 650px;
+    margin: 0 auto 25px;
+}
+
+.search-box input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 16px 50px 16px 20px;
+
+    border: 1px solid rgba(244, 241, 234, 0.2);
+    border-radius: 30px;
+
+    background: rgba(255, 255, 255, 0.03);
+    color: #f4f1ea;
+
+    font-family: "Lora", serif;
+    font-size: 16px;
+
+    outline: none;
+}
+
+.search-box input::placeholder {
+    color: rgba(244, 241, 234, 0.55);
+}
+
+.search-box input:focus {
+    border-color: rgba(244, 241, 234, 0.5);
+}
+
+
+#clearSearch {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    border: none;
+    background: none;
+
+    color: #f4f1ea;
+
+    font-size: 24px;
+    cursor: pointer;
+
+    opacity: 0.6;
+}
+
+#clearSearch:hover {
+    opacity: 1;
+}
+
+
+/* COLLECTION BUTTONS */
+
+.whisper-collections {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    margin-top: 20px;
+}
+
+.collection-button {
+    padding: 9px 17px;
+
+    border: 1px solid rgba(244, 241, 234, 0.2);
+    border-radius: 20px;
+
+    background: transparent;
+    color: #f4f1ea;
+
+    font-family: "Lora", serif;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+.collection-button:hover {
+    background: rgba(244, 241, 234, 0.08);
+}
+
+.collection-button.active {
+    background: rgba(244, 241, 234, 0.15);
+    border-color: rgba(244, 241, 234, 0.5);
+}
+
+
+/* SEARCH RESULT COUNT */
+
+.search-results {
+    margin-top: 22px;
+    font-size: 14px;
+    opacity: 0.65;
+}
+
+
+/* HIDDEN WRITINGS */
+
+.writing-card.search-hidden {
+    display: none;
+}
+
+
+
+
