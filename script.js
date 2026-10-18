@@ -259,6 +259,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         "writing-18.html":
             "fragment competition attraction jealousy confusion uncertainty feelings"
+
+        "writing-19.html": ["letter", "love", "confusion", "pain", "feelings", "attachment", "attraction", "letting-go"],
     };
 
 
